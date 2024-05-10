@@ -75,11 +75,11 @@ int main(int argc, char **argv) {
 fn main() {\n"""
         elif extension == 'm':
             runner += """
-int main(int argc, const char **argv) {\n
+int main(int argc, char **argv) {\n
     XTEST_CREATE(argc, argv);\n"""
         elif extension == 'mm':
             runner += """
-int main(int argc, const char **argv) {\n
+int main(int argc, char **argv) {\n
     XTEST_CREATE(argc, argv);\n"""
 
         import_pools = '\n'.join([f"    XTEST_IMPORT_POOL({group});" for group in test_groups])
