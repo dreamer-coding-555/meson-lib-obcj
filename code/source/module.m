@@ -12,6 +12,7 @@ Description:
 */
 #import "fossil/module.h"
 
+
 @implementation FSCLFossilMath
 
 + (int)addWithInteger:(int)a andInteger:(int)b {
