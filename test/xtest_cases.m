@@ -18,6 +18,7 @@ Description:
 //
 // XUNIT-CASES: list of test cases testing project features
 //
+
 XTEST(lib_subtract_case) {
     TEST_ASSUME_TRUE(subtract(4, 2) == 2);
     TEST_ASSUME_FALSE(subtract(2, 55) == 2);
