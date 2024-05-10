@@ -10,7 +10,7 @@ Description:
     feel free to contact Michael at michaelbrockus@gmail.com.
 ==============================================================================
 */
-#include "fossil/module.h"
+#import "fossil/module.h"
 
 
 int add(int a, int b) {
