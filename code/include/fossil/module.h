@@ -13,6 +13,8 @@ Description:
 #ifndef FSCL_MOD_M
 #define FSCL_MOD_M
 
+#import <Foundation/Foundation.h>
+
 #ifdef __cplusplus
 extern "C"
 {
