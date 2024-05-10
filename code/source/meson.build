@@ -1,9 +1,9 @@
-code = files('module.c')
+code = files('module.m')
 
-lib = static_library('fscl-c',
+lib = library('fscl-objc',
     code,
     include_directories: dir)
 
-fscl_c_dep = declare_dependency(
+fscl_objc_dep = declare_dependency(
     link_with: lib,
     include_directories: dir)
