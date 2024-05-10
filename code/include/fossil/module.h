@@ -10,8 +10,8 @@ Description:
     feel free to contact Michael at michaelbrockus@gmail.com.
 ==============================================================================
 */
-#ifndef FSCL_MOD_H
-#define FSCL_MOD_H
+#ifndef FSCL_MOD_M
+#define FSCL_MOD_M
 
 #ifdef __cplusplus
 extern "C"
