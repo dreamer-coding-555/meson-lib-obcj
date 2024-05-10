@@ -40,7 +40,7 @@ jobs:
         run: sudo xcode-select -r || xcode-select --install
       - name: Install Objective-C compiler
         if: matrix.os == 'ubuntu-latest'
-        run: sudo apt-get update && sudo apt-get install -y gcc gobjc gnustep
+        run: sudo apt-get update && sudo apt-get install -y gcc gobjc gnustep gnustep-devel
       - name: Configure
         run: meson setup builddir -Dwith_test=enabled
       - name: Compile
