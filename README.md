@@ -1,6 +1,6 @@
-# Project Template - `C`
+# Project Template - `Objective C`
 
-Welcome to the Project Template repository! This README provides user-friendly instructions for setting up, compiling, testing, and running a project using the Meson build system on Windows, macOS, and Linux systems. Please note that the Meson build system is required for successfully building this project.
+Welcome to the Project Template repository! This README provides user-friendly instructions for setting up, compiling, testing, and running a project using the Meson build system macOS, and Linux systems. Please note that the Meson build system is required for successfully building this project.
 
 ## Prerequisites
 
@@ -12,23 +12,23 @@ Before getting started, make sure you have the following installed:
 
 **Adding Dependency**:
 
-Create a directory named subprojects in the root directory, next create a file named `fscl-<name>-c.wrap` in the `subprojects` directory of your project with the following content:
+Create a directory named subprojects in the root directory, next create a file named `fscl-<name>-objc.wrap` in the `subprojects` directory of your project with the following content:
 
    ```ini
    [wrap-git]
-   url = https://github.com/fossil-lib/fscl-<name>-c.git
+   url = https://github.com/fossil-lib/fscl-<name>-objc.git
    revision = main
    
    [provide]
-   fscl-<name>-c = fscl_<name>_c_dep
+   fscl-<name>-objc = fscl_<name>_objc_dep
    ```
 
 **Integrate Dependency**:
    ```meson
-   project('my_project', 'c')
+   project('my_project', 'objc')
 
-   exe = executable('my_project', 'my_project.c',
-       dependencies : dependency('fscl-<name>-c')) # add this line
+   exe = executable('my_project', 'my_project.m',
+       dependencies : dependency('fscl-<name>-objc')) # add this line
 
    test('basic', exe)
    ```
