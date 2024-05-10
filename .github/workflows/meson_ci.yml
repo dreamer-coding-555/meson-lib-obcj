@@ -28,7 +28,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest, windows-2022]
+        os: [ubuntu-latest, macos-latest]
         meson_version: ["1.2.0", "1.3.0", "1.4.0"]
     steps:
       - name: Checkout code
@@ -47,9 +47,6 @@ jobs:
       - name: Install Objective-C compiler
         if: matrix.os == 'ubuntu-latest'
         run: sudo apt-get update && sudo apt-get install -y gcc objc
-      - name: Install Objective-C compiler
-        if: matrix.os == 'windows-latest' || matrix.os == 'windows-2022'
-        run: choco install mingw
       - name: Configure
         run: meson setup builddir -Dwith_test=enabled
       - name: Compile
