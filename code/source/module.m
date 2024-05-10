@@ -12,11 +12,26 @@ Description:
 */
 #import "fossil/module.h"
 
+@implementation FSCLFossilMath
 
-int add(int a, int b) {
++ (int)addWithInteger:(int)a andInteger:(int)b {
     return a + b;
-} // end of func
+}
 
-int subtract(int a, int b) {
++ (int)subtractWithInteger:(int)a andInteger:(int)b {
     return a - b;
-} // end of func
+}
+
++ (int)multiplyWithInteger:(int)a andInteger:(int)b {
+    return a * b;
+}
+
++ (double)divideWithDouble:(double)a byDouble:(double)b {
+    if (b == 0) {
+        NSLog(@"Error: Division by zero");
+        return 0; // You can handle this error differently based on your application's requirements
+    }
+    return a / b;
+}
+
+@end
