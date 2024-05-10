@@ -19,10 +19,6 @@ Description:
 // XUNIT-CASES: list of test cases testing project features
 //
 
-//
-// XUNIT-CASES: list of test cases testing project features
-//
-
 XTEST(FossilMath_subtract_case) {
     TEST_ASSUME_TRUE([FSCLFossilMath subtractWithInteger:4 andInteger:2] == 2);
     TEST_ASSUME_FALSE([FSCLFossilMath subtractWithInteger:2 andInteger:55] == 2);
