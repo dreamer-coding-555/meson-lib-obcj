@@ -10,10 +10,10 @@ Description:
     feel free to contact Michael at michaelbrockus@gmail.com.
 ==============================================================================
 */
-#include <fossil/module.h> // library under test
+#import <fossil/module.h> // library under test
 
-#include <fossil/xtest.h>   // basic test tools
-#include <fossil/xassume.h> // extra asserts
+#import <fossil/xtest.h>   // basic test tools
+#import <fossil/xassume.h> // extra asserts
 
 //
 // XUNIT-CASES: list of test cases testing project features
