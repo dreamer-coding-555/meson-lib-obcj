@@ -5,12 +5,14 @@ on:
     paths:
       - "**.py"
       - "**.build"
+      - "**.h"
       - "**.m"
       - "**.mm"
   pull_request:
     paths:
       - "**.py"
       - "**.build"
+      - "**.h"
       - "**.m"
       - "**.mm"
 
