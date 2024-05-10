@@ -21,27 +21,47 @@ extern "C"
 #endif
 
 /**
+ * The FSCL namespace contains classes and functions related to Fossil Math library.
+ */
+@interface FSCLFossilMath : NSObject
+
+/**
  * Adds two integers.
- *
- * This function takes two integer values, 'a' and 'b', and returns their sum.
  *
  * @param a The first integer.
  * @param b The second integer.
- * @return The sum of 'a' and 'b'.
+ * @return The sum of a and b.
  */
-int add(int a, int b);
++ (int)addWithInteger:(int)a andInteger:(int)b;
 
 /**
- * Subtracts one integer from another.
+ * Subtracts two integers.
  *
- * This function takes two integer values, 'a' and 'b', and returns the result of
- * subtracting 'b' from 'a'.
- *
- * @param a The integer from which 'b' will be subtracted.
- * @param b The integer to subtract from 'a'.
- * @return The result of 'a' - 'b'.
+ * @param a The first integer.
+ * @param b The second integer.
+ * @return The difference between a and b.
  */
-int subtract(int a, int b);
++ (int)subtractWithInteger:(int)a andInteger:(int)b;
+
+/**
+ * Multiplies two integers.
+ *
+ * @param a The first integer.
+ * @param b The second integer.
+ * @return The product of a and b.
+ */
++ (int)multiplyWithInteger:(int)a andInteger:(int)b;
+
+/**
+ * Divides two doubles.
+ *
+ * @param a The numerator.
+ * @param b The denominator.
+ * @return The result of dividing a by b. If b is zero, this function returns 0.
+ */
++ (double)divideWithDouble:(double)a byDouble:(double)b;
+
+@end
 
 #ifdef __cplusplus
 }
