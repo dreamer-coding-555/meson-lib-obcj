@@ -49,7 +49,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y gcc gobjc
       - name: Install Objective-C compiler
         if: matrix.os == 'windows-latest' || matrix.os == 'windows-2022'
-        run: choco install mingw
+        run: choco install mingw gcc
       - name: Configure
         run: meson setup builddir -Dwith_test=enabled
       - name: Compile
