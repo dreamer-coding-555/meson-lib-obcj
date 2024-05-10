@@ -41,6 +41,15 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install meson==${{ matrix.meson_version }} ninja
+      - name: Install Objective-C compiler
+        if: matrix.os == 'macos-latest'
+        run: sudo xcode-select -r || xcode-select --install
+      - name: Install Objective-C compiler
+        if: matrix.os == 'ubuntu-latest'
+        run: sudo apt-get update && sudo apt-get install -y gcc objc
+      - name: Install Objective-C compiler
+        if: matrix.os == 'windows-latest' || matrix.os == 'windows-2022'
+        run: choco install mingw
       - name: Configure
         run: meson setup builddir -Dwith_test=enabled
       - name: Compile
