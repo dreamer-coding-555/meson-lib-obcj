@@ -1,6 +1,6 @@
 if get_option('with_test').enabled()
     test_deps = [
-        dependency('fscl-xtest-c')
+        dependency('fscl-xtest-c', default_options: ['c_std=c17'])
     ]
 
     run_command(['python', 'generate-runner.py'], check: true)
