@@ -1,6 +1,6 @@
 code = files('module.c')
 
-lib = library('fscl-c',
+lib = static_library('fscl-c',
     code,
     include_directories: dir)
 
