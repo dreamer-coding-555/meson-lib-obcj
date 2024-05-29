@@ -1,6 +1,6 @@
 # Project Template - `Objective C`
 
-Welcome to the Project Template repository! This README provides user-friendly instructions for setting up, compiling, testing, and running a project using the Meson build system macOS, and Linux systems. Please note that the Meson build system is required for successfully building this project.
+Welcome to the Project Template repository! This README provides user-friendly instructions for setting up, compiling, testing, and running a project using the Meson build system on macOS systems. Please note that the Meson build system is required for successfully building this project.
 
 ## Prerequisites
 
