@@ -8,42 +8,48 @@ Before getting started, make sure you have the following installed:
 
 - **Meson Build System**: This project relies on Meson. If you don't have Meson installed, visit the official [Meson website](https://mesonbuild.com/Getting-meson.html) for installation instructions.
 
-## Setting up, Compiling, Installing, and Running the Project
+## Adding dependency
 
-**Adding Dependency**:
-
-Create a directory named subprojects in the root directory, next create a file named `fscl-<name>-objc.wrap` in the `subprojects` directory of your project with the following content:
+1. **Install Meson Build System**: Before integrating the dependency, ensure you have Meson `1.2` or newer installed on your host system. You can install it with this command.
 
    ```ini
+   python -m pip install meson           # to install Meson
+   python -m pip install --upgrade meson # to upgrade Meson
+   ```
+
+2. **Adding Wrap File**: You can add a `.wrap`, first go into `subprojects` directory and create `fscl-<name>-objc.wrap` next copy the defintion into the file:
+
+   ```ini
+   # ======================
+   # Git Wrap package definition
+   # ======================
    [wrap-git]
-   url = https://github.com/fossil-lib/fscl-<name>-objc.git
-   revision = main
-   
+   url = https://github.com/fossil-lib/tscl-<name>-objc.git
+   revision = v1.0.0
+
    [provide]
    fscl-<name>-objc = fscl_<name>_objc_dep
    ```
 
-**Integrate Dependency**:
-   ```meson
-   project('my_project', 'objc')
+3. **Integrate the New Dependency**: After creating the dependency `.wrap` file, you need to integrate it into your Meson project. This typically involves adding the dependency to your `meson.build` file. Here's an example of how you might do that:
 
-   exe = executable('my_project', 'my_project.m',
-       dependencies : dependency('fscl-<name>-objc')) # add this line
-
-   test('basic', exe)
+   ```ini
+   dep = dependency('fscl-<name>-objc')
    ```
 
-## Including the Demo and Running Tests
+   This line retrieves the `fscl-<name>-objc` dependency, allowing you to use it in your project.
 
-To run tests, you can use the following options when configuring the build:
+## Configure Options
 
-- **Running Tests**: Add `-Dwith_test=enabled` when configuring the build.
+You have options when configuring the build, each serving a different purpose:
 
-Example:
+- **Running Tests**: To enable running tests, use `-Dwith_test=enabled` when configuring the build.
 
-```zsh
-meson setup builddir -Dwith_test=enabled
-```
+   Example:
+   
+   ```python
+   meson setup builddir -Dwith_test=enabled
+   ```
 
 ## Contributing and Support
 
